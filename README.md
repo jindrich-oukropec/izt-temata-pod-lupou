@@ -13,3 +13,4 @@
     - Heslo: `H78WFWRUdyFUVMb0IFBW`
 7) V sekci Users si vytvor vlastniho uzivatele
 8) Prihlas se pod vlastim uzivatelskym uctem
+9) V sekci Settings klikni na `uSync` a pak na tlacitko `Import`
