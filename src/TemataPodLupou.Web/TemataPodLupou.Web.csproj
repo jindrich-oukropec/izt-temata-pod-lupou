@@ -336,6 +336,17 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Models\Article.generated.cs" />
+    <Compile Include="Models\Audio.generated.cs" />
+    <Compile Include="Models\File.generated.cs" />
+    <Compile Include="Models\Folder.generated.cs" />
+    <Compile Include="Models\Home.generated.cs" />
+    <Compile Include="Models\Image.generated.cs" />
+    <Compile Include="Models\Member.generated.cs" />
+    <Compile Include="Models\Submission.generated.cs" />
+    <Compile Include="Models\SubmissionForm.generated.cs" />
+    <Compile Include="Models\VectorGraphics.generated.cs" />
+    <Compile Include="Models\Video.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
