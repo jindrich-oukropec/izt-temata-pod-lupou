@@ -342,6 +342,7 @@
     <Compile Include="Models\Folder.generated.cs" />
     <Compile Include="Models\Home.generated.cs" />
     <Compile Include="Models\Image.generated.cs" />
+    <Compile Include="Models\Media.generated.cs" />
     <Compile Include="Models\Member.generated.cs" />
     <Compile Include="Models\Submission.generated.cs" />
     <Compile Include="Models\SubmissionForm.generated.cs" />
