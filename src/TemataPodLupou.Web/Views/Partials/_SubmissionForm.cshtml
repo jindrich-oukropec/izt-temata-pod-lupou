@@ -1,0 +1,70 @@
+﻿@using System.Linq.Expressions
+@using TemataPodLupou.Web.Controllers
+@inherits UmbracoViewPage<SubmissionController.ViewModel>
+
+@{
+    var page = UmbracoContext.PublishedRequest.PublishedContent as SubmissionForm;
+    var labelAttrs = new {@class = "form-label"};
+}
+
+@functions {
+    private string HelperId<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression) {
+        return Html.IdFor(expression) + "Help";
+    }
+
+    private object HelperAttrs<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression)
+    {
+        return new
+        {
+            id = HelperId(expression),
+            @class = "form-text"
+        };
+    }
+    
+    private object InputAttrs<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression)
+    {
+        return new
+        {
+            aria_describedby = HelperId(expression),
+            @class = "form-control"
+        };
+    }
+}
+
+@using (Html.BeginUmbracoForm<SubmissionController>(nameof(SubmissionController.HandleSubmission)))
+{
+    @Html.ValidationSummary()
+    @Html.AntiForgeryToken()
+    
+    <div class="mb-4">
+        @Html.LabelFor(x => x.Title, page.TitleFieldCaption, labelAttrs)
+        @Html.TextBoxFor(x => x.Title, InputAttrs(x => x.Title))
+        @Html.Wrap("div", page.TitleFieldHelpText, HelperAttrs(x => x.Title))
+    </div>
+    
+    <div class="mb-4">
+        @Html.LabelFor(x => x.Description, page.DescriptionFieldCaption, labelAttrs)
+        @Html.TextAreaFor(x => x.Description, InputAttrs(x => x.Description))
+        @Html.Wrap("div", page.DescriptionFieldHelpText, HelperAttrs(x => x.Description))
+    </div>
+    
+    <div class="mb-4">
+        @Html.LabelFor(x => x.File, page.FileFieldCaption, labelAttrs)
+        <input type="file" class="form-control form-control-lg" name="@Html.NameFor(x => x.File)">
+        @Html.Wrap("div", page.FileFieldHelpText, HelperAttrs(x => x.File))
+    </div>
+    
+    <div class="mb-4">
+        @Html.LabelFor(x => x.Email, page.EmailFieldCaption, labelAttrs)
+        @Html.TextBoxFor(x => x.Email, InputAttrs(x => x.Email))
+        @Html.Wrap("div", page.EmailFieldHelpText, HelperAttrs(x => x.Email))
+    </div>
+    
+    <button type="submit" class="btn btn-main mb-2">
+        @page.SubmitButtonText
+    </button>
+
+    <p class="form-text">
+        @page.TermsAndConditions
+    </p>
+}

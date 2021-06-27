@@ -334,10 +334,12 @@
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
     <Content Include="Views\Home.cshtml" />
+    <Content Include="Views\Partials\_SubmissionForm.cshtml" />
     <Content Include="Views\SubmissionForm.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Models\Article.generated.cs" />
     <Compile Include="Models\Audio.generated.cs" />
     <Compile Include="Models\File.generated.cs" />
@@ -376,12 +378,20 @@
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
+    <None Include="Properties\PublishProfiles\Azure.pubxml" />
+    <None Include="Properties\PublishProfiles\temata-pod-lupou - FTP.pubxml" />
+    <None Include="Web.Azure.config">
+      <DependentUpon>Web.config</DependentUpon>
+    </None>
     <None Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Scripts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>

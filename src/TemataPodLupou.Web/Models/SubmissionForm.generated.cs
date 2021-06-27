@@ -45,10 +45,122 @@ namespace TemataPodLupou.Web.Models
 		// properties
 
 		///<summary>
+		/// Back To Site Button Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("backToSiteButtonLabel")]
+		public virtual string BackToSiteButtonLabel => this.Value<string>("backToSiteButtonLabel");
+
+		///<summary>
+		/// Button Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("ctaButtonText")]
+		public virtual string CtaButtonText => this.Value<string>("ctaButtonText");
+
+		///<summary>
 		/// Heading
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("heading")]
-		public virtual string Heading => this.Value<string>("heading");
+		[ImplementPropertyType("ctaHeading")]
+		public virtual string CtaHeading => this.Value<string>("ctaHeading");
+
+		///<summary>
+		/// Description Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("descriptionFieldCaption")]
+		public virtual string DescriptionFieldCaption => this.Value<string>("descriptionFieldCaption");
+
+		///<summary>
+		/// Description Field Help Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("descriptionFieldHelpText")]
+		public virtual string DescriptionFieldHelpText => this.Value<string>("descriptionFieldHelpText");
+
+		///<summary>
+		/// Email Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("emailFieldCaption")]
+		public virtual string EmailFieldCaption => this.Value<string>("emailFieldCaption");
+
+		///<summary>
+		/// Email Field Help Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("emailFieldHelpText")]
+		public virtual string EmailFieldHelpText => this.Value<string>("emailFieldHelpText");
+
+		///<summary>
+		/// File Field Button Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("fileFieldCaption")]
+		public virtual string FileFieldCaption => this.Value<string>("fileFieldCaption");
+
+		///<summary>
+		/// File Field Help Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("fileFieldHelpText")]
+		public virtual string FileFieldHelpText => this.Value<string>("fileFieldHelpText");
+
+		///<summary>
+		/// File Field Selected Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("fileFieldSelectedLabel")]
+		public virtual string FileFieldSelectedLabel => this.Value<string>("fileFieldSelectedLabel");
+
+		///<summary>
+		/// Media Store Folder
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("mediaStoreFolder")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops MediaStoreFolder => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("mediaStoreFolder");
+
+		///<summary>
+		/// Submit Button Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("submitButtonText")]
+		public virtual string SubmitButtonText => this.Value<string>("submitButtonText");
+
+		///<summary>
+		/// Terms and Conditions
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("termsAndConditions")]
+		public virtual string TermsAndConditions => this.Value<string>("termsAndConditions");
+
+		///<summary>
+		/// Image
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("thankYouImage")]
+		public virtual global::Umbraco.Core.Models.MediaWithCrops ThankYouImage => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("thankYouImage");
+
+		///<summary>
+		/// Thank You Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("thankYouText")]
+		public virtual string ThankYouText => this.Value<string>("thankYouText");
+
+		///<summary>
+		/// Title Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("titleFieldCaption")]
+		public virtual string TitleFieldCaption => this.Value<string>("titleFieldCaption");
+
+		///<summary>
+		/// Title Field Help Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("titleFieldHelpText")]
+		public virtual string TitleFieldHelpText => this.Value<string>("titleFieldHelpText");
 	}
 }

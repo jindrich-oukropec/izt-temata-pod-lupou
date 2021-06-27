@@ -52,6 +52,20 @@ namespace TemataPodLupou.Web.Models
 		public virtual string Description => this.Value<string>("description");
 
 		///<summary>
+		/// Email
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("email")]
+		public virtual string Email => this.Value<string>("email");
+
+		///<summary>
+		/// Media
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("media")]
+		public virtual string Media => this.Value<string>("media");
+
+		///<summary>
 		/// Title
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
