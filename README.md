@@ -26,12 +26,12 @@
 
 1) V sekci Media vytvor slozku a pojmenuj ji Uploads
 1) V sekci Content vytvor obsah typu "Media", ktery reprezentuje redakci
-  1) Pro ulozeni je potreba kliknout na "Save and Publish"
+    1) Pro ulozeni je potreba kliknout na "Save and Publish"
 1) Pod redakci vytvor obsah typu "Submission Form"
-  1) Vypln vsechny pole, v poli "Media Store Folder" vyber predem vytvorenou slozku Uploads
-  1) Klikni na Save and Publish
+    1) Vypln vsechny pole, v poli "Media Store Folder" vyber predem vytvorenou slozku Uploads
+    1) Klikni na Save and Publish
 1) Zobraz formular v prohlizeci
-  1) Po ulozeni se preklinki na zalozku "Info" a klikni na odkaz v boxu Links
+    1) Po ulozeni se preklinki na zalozku "Info" a klikni na odkaz v boxu Links
 1) Vypln formular a odesli
 1) Odeslana data se zobrazi v sekci Content pod formularem, ktery byl odeslan
-  1) Muze byt nutne zmacknout na formular pravym tlacitkem a vybrat "Reload" 
+    1) Muze byt nutne zmacknout na formular pravym tlacitkem a vybrat "Reload" 
