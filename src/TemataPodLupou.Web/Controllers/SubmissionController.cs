@@ -62,7 +62,7 @@ namespace TemataPodLupou.Web.Controllers
             
             if (model.File != null)
             {
-                var parentMedia = (CurrentPage as SubmissionForm).MediaStoreFolder.MediaItem;
+                var parentMedia = (CurrentPage as SubmissionWidget).MediaStoreFolder.MediaItem;
                 var media = _mediaService.CreateMediaWithIdentity(model.Title, parentMedia.Id, "File");
                 media.SetValue(_contentTypeBaseServiceProvider, "umbracoFile", model.File.FileName, model.File.InputStream);
                 _mediaService.Save(media);

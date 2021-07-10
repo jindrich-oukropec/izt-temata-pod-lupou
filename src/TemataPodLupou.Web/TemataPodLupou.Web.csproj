@@ -335,7 +335,7 @@
     <Content Include="Global.asax" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Partials\_SubmissionForm.cshtml" />
-    <Content Include="Views\SubmissionForm.cshtml" />
+    <Content Include="Views\SubmissionWidget.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
@@ -349,7 +349,7 @@
     <Compile Include="Models\Media.generated.cs" />
     <Compile Include="Models\Member.generated.cs" />
     <Compile Include="Models\Submission.generated.cs" />
-    <Compile Include="Models\SubmissionForm.generated.cs" />
+    <Compile Include="Models\SubmissionWidget.generated.cs" />
     <Compile Include="Models\VectorGraphics.generated.cs" />
     <Compile Include="Models\Video.generated.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

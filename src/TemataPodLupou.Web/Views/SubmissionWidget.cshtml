@@ -1,4 +1,4 @@
-﻿@inherits UmbracoViewPage<SubmissionForm>
+﻿@inherits UmbracoViewPage<SubmissionWidget>
 @{
 	Layout = null;
 }
@@ -152,7 +152,7 @@
       
         <div class="row justify-content-center mb-3">
             <div class="col w-medium text-center">
-                <p>Hledáme témata, která rezonují ve vašem regionu a kterým bychom se na Drbně měli věnovat. Pomozte nám je najít. O navržených tématech budete hlasovat a nejúspěšnější témata zpracujeme.</p>
+                <p>@Model.FormDescription</p>
             </div>
         </div>
             

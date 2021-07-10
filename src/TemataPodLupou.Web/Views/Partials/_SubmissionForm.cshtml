@@ -3,22 +3,12 @@
 @inherits UmbracoViewPage<SubmissionController.ViewModel>
 
 @{
-    var page = UmbracoContext.PublishedRequest.PublishedContent as SubmissionForm;
-    var labelAttrs = new {@class = "form-label"};
+    var page = (SubmissionWidget)UmbracoContext.PublishedRequest.PublishedContent;
 }
 
 @functions {
     private string HelperId<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression) {
         return Html.IdFor(expression) + "Help";
-    }
-
-    private object HelperAttrs<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression)
-    {
-        return new
-        {
-            id = HelperId(expression),
-            @class = "form-text"
-        };
     }
     
     private object InputAttrs<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression)
@@ -29,6 +19,15 @@
             @class = "form-control"
         };
     }
+
+    private IHtmlString HelpTextFor<TValue>(Expression<Func<SubmissionController.ViewModel, TValue>> expression, string helpText)
+    {
+        return Html.Wrap("div", helpText, new
+        {
+            id = HelperId(expression),
+            @class = "form-text"
+        });
+    }
 }
 
 @using (Html.BeginUmbracoForm<SubmissionController>(nameof(SubmissionController.HandleSubmission)))
@@ -37,27 +36,27 @@
     @Html.AntiForgeryToken()
     
     <div class="mb-4">
-        @Html.LabelFor(x => x.Title, page.TitleFieldCaption, labelAttrs)
+        <label for="@Html.IdFor(x => x.Title)" class="form-label">@page.TitleFieldCaption</label>
         @Html.TextBoxFor(x => x.Title, InputAttrs(x => x.Title))
-        @Html.Wrap("div", page.TitleFieldHelpText, HelperAttrs(x => x.Title))
+        @HelpTextFor(x => x.Title, page.TitleFieldHelpText)
     </div>
     
     <div class="mb-4">
-        @Html.LabelFor(x => x.Description, page.DescriptionFieldCaption, labelAttrs)
+        <label for="@Html.IdFor(x => x.Description)" class="form-label">@page.DescriptionFieldCaption</label>
         @Html.TextAreaFor(x => x.Description, InputAttrs(x => x.Description))
-        @Html.Wrap("div", page.DescriptionFieldHelpText, HelperAttrs(x => x.Description))
+        @HelpTextFor(x => x.Description, page.DescriptionFieldHelpText)
     </div>
     
     <div class="mb-4">
-        @Html.LabelFor(x => x.File, page.FileFieldCaption, labelAttrs)
-        <input type="file" class="form-control form-control-lg" name="@Html.NameFor(x => x.File)">
-        @Html.Wrap("div", page.FileFieldHelpText, HelperAttrs(x => x.File))
+        <label for="@Html.IdFor(x => x.File)" class="form-label">@page.FileFieldCaption</label>
+        <input type="file" class="form-control form-control-lg" name="@Html.NameFor(x => x.File)" aria-describedby="@HelperId(x => x.File)">
+        @HelpTextFor(x => x.File, page.FileFieldHelpText)
     </div>
     
     <div class="mb-4">
-        @Html.LabelFor(x => x.Email, page.EmailFieldCaption, labelAttrs)
+        <label for="@Html.IdFor(x => x.Email)" class="form-label">@page.EmailFieldCaption</label>
         @Html.TextBoxFor(x => x.Email, InputAttrs(x => x.Email))
-        @Html.Wrap("div", page.EmailFieldHelpText, HelperAttrs(x => x.Email))
+        @HelpTextFor(x => x.Email, page.EmailFieldHelpText)
     </div>
     
     <button type="submit" class="btn btn-main mb-2">
