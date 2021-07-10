@@ -414,3 +414,6 @@ FodyWeavers.xsd
 
 # Ignore the Models Builder models out of date flag
 **/App_Data/Models/ood.flag
+
+# Ignore media files uploaded during development
+**/Media/*/*
