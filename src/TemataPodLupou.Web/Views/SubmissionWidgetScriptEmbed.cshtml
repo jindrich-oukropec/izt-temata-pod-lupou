@@ -1,0 +1,18 @@
+﻿@using File = System.IO.File
+@inherits UmbracoViewPage<SubmissionWidget>
+@{
+	Layout = null;
+	Response.ContentType = "text/javascript";
+ 
+	var resizer = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Scripts/iframe-resizer/v4.3.2/iframeResizer.min.js"));
+	var embed = File.ReadAllText(HttpContext.Current.Server.MapPath("~/Scripts/embed-script.js"));
+}
+
+void function () {
+
+@Html.Raw(resizer)
+
+@Html.Raw(embed)
+
+	embed('comments', '@Model.Url(null, UrlMode.Absolute)');
+}()

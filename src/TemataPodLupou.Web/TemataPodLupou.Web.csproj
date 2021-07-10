@@ -333,12 +333,22 @@
     <Content Include="config\Lang\zh-CN.user.xml" />
     <Content Include="config\logviewer.searches.config.js" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\embed-script.js" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.contentWindow.js" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.contentWindow.map" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.contentWindow.min.js" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.js" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.map" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\iframeResizer.min.js" />
+    <Content Include="Scripts\iframe-resizer\v4.3.2\index.js" />
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Partials\_SubmissionForm.cshtml" />
     <Content Include="Views\SubmissionWidget.cshtml" />
+    <Content Include="Views\SubmissionWidgetScriptEmbed.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentFinders\SubmissionWidgetHostScriptFinder.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Models\Article.generated.cs" />
     <Compile Include="Models\Audio.generated.cs" />
@@ -390,9 +400,6 @@
     <None Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
-  </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Scripts" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
