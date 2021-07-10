@@ -348,6 +348,7 @@
     <Compile Include="Models\Image.generated.cs" />
     <Compile Include="Models\Media.generated.cs" />
     <Compile Include="Models\Member.generated.cs" />
+    <Compile Include="Models\ProcessStep.generated.cs" />
     <Compile Include="Models\Submission.generated.cs" />
     <Compile Include="Models\SubmissionWidget.generated.cs" />
     <Compile Include="Models\VectorGraphics.generated.cs" />

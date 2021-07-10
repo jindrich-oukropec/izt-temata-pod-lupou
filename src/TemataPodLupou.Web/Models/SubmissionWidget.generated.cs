@@ -52,6 +52,13 @@ namespace TemataPodLupou.Web.Models
 		public virtual string BackToSiteButtonLabel => this.Value<string>("backToSiteButtonLabel");
 
 		///<summary>
+		/// Collection Process
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("collectionProcess")]
+		public virtual global::System.Collections.Generic.IEnumerable<global::TemataPodLupou.Web.Models.ProcessStep> CollectionProcess => this.Value<global::System.Collections.Generic.IEnumerable<global::TemataPodLupou.Web.Models.ProcessStep>>("collectionProcess");
+
+		///<summary>
 		/// Button Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]

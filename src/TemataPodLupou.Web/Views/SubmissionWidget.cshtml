@@ -162,29 +162,25 @@
             </div>
         </div>
 
-        <hr />
-
-        <div class="row justify-content-center">
-            <div class="col w-medium">
-                <div class="row">
-                    <div class="col text-center">
-                        <div class="circle mb-2">1</div>
-                        <div class="date mb-2">1. 7. až 14. 7.</div>
-                        <div class="fw-bold">Sběr témat</div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="circle mb-2">2</div>
-                        <div class="date mb-2">20. 7. až 1. 8.</div>
-                        <div class="fw-bold">Hlasování</div>
-                    </div>
-                    <div class="col text-center">
-                        <div class="circle mb-2">3</div>
-                        <div class="date mb-2">Září a říjen</div>
-                        <div class="fw-bold">Publikování zpracovaných témat</div>
+        @if (Model.CollectionProcess?.Any() == true)
+        {
+            var i = 1;
+            <hr />
+            <div class="row justify-content-center">
+                <div class="col w-medium">
+                    <div class="row">
+                        @foreach (var step in Model.CollectionProcess)
+                        {
+                            <div class="col text-center">
+                                <div class="circle mb-2">@(i++)</div>
+                                <div class="date mb-2">@step.Date</div>
+                                <div class="fw-bold">@step.Label</div>
+                            </div>
+                        }
                     </div>
                 </div>
             </div>
-        </div>
+        }
     </section>
 
     <section id="confirmation" class="container-fluid px-4 px-md-5 py-5" style="display: none">
