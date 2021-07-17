@@ -136,6 +136,62 @@ namespace TemataPodLupou.Web.Models
 		public virtual global::Umbraco.Core.Models.MediaWithCrops MediaStoreFolder => this.Value<global::Umbraco.Core.Models.MediaWithCrops>("mediaStoreFolder");
 
 		///<summary>
+		/// Reason Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("reasonFieldCaption")]
+		public virtual string ReasonFieldCaption => this.Value<string>("reasonFieldCaption");
+
+		///<summary>
+		/// Reason Field Help Text
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("reasonFieldHelpText")]
+		public virtual string ReasonFieldHelpText => this.Value<string>("reasonFieldHelpText");
+
+		///<summary>
+		/// Region Dropdown Values
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("regionDropdownValues")]
+		public virtual global::System.Collections.Generic.IEnumerable<string> RegionDropdownValues => this.Value<global::System.Collections.Generic.IEnumerable<string>>("regionDropdownValues");
+
+		///<summary>
+		/// Region Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("regionFieldCaption")]
+		public virtual string RegionFieldCaption => this.Value<string>("regionFieldCaption");
+
+		///<summary>
+		/// Specific Location Field Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("specificLocationFieldCaption")]
+		public virtual string SpecificLocationFieldCaption => this.Value<string>("specificLocationFieldCaption");
+
+		///<summary>
+		/// Specific Location Selector Caption
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("specificLocationSelectorCaption")]
+		public virtual string SpecificLocationSelectorCaption => this.Value<string>("specificLocationSelectorCaption");
+
+		///<summary>
+		/// Specific Location Selector - Specify Location Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("specificLocationSelectorSpecifyLocationLabel")]
+		public virtual string SpecificLocationSelectorSpecifyLocationLabel => this.Value<string>("specificLocationSelectorSpecifyLocationLabel");
+
+		///<summary>
+		/// Specific Location Selector - Whole Region Label
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("specificLocationSelectorWholeRegionLabel")]
+		public virtual string SpecificLocationSelectorWholeRegionLabel => this.Value<string>("specificLocationSelectorWholeRegionLabel");
+
+		///<summary>
 		/// Submit Button Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]

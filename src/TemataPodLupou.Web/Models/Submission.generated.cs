@@ -59,11 +59,32 @@ namespace TemataPodLupou.Web.Models
 		public virtual string Email => this.Value<string>("email");
 
 		///<summary>
+		/// Location
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("location")]
+		public virtual string Location => this.Value<string>("location");
+
+		///<summary>
 		/// Media
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("media")]
 		public virtual string Media => this.Value<string>("media");
+
+		///<summary>
+		/// Reason
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("reason")]
+		public virtual string Reason => this.Value<string>("reason");
+
+		///<summary>
+		/// Region
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("region")]
+		public virtual string Region => this.Value<string>("region");
 
 		///<summary>
 		/// Title

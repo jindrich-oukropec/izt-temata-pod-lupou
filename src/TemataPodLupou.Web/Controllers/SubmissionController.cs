@@ -31,7 +31,15 @@ namespace TemataPodLupou.Web.Controllers
             public string Title { get; set; }
 
             [Required]
+            public string Reason { get; set; }
+
+            [Required]
             public string Description { get; set; }
+            
+            [Required]
+            public string Region { get; set; }
+            
+            public string Location { get; set; }
             
             public HttpPostedFileBase File { get; set; }
             
@@ -57,7 +65,10 @@ namespace TemataPodLupou.Web.Controllers
 
             var content = Services.ContentService.Create(model.Title, CurrentPage.Id, Submission.ModelTypeAlias);
             SetValue(content, x => x.Title, model.Title);
+            SetValue(content, x => x.Reason, model.Reason);
             SetValue(content, x => x.Description, model.Description);
+            SetValue(content, x => x.Region, model.Region);
+            SetValue(content, x => x.Location, model.Location);
             SetValue(content, x => x.Email, model.Email);
             
             if (model.File != null)
@@ -76,7 +87,7 @@ namespace TemataPodLupou.Web.Controllers
             return RedirectToCurrentUmbracoPage();
         }
         
-        private void SetValue<TValue>(IContent content, Expression<Func<Submission, TValue>> selector, object value)
+        private static void SetValue<TValue>(IContentBase content, Expression<Func<Submission, TValue>> selector, object value)
         {
             var propertyAlias = Submission.GetModelPropertyType(selector).Alias;
             content.SetValue(propertyAlias, value);

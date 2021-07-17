@@ -4,6 +4,9 @@
 
 @{
     var page = (SubmissionWidget)UmbracoContext.PublishedRequest.PublishedContent;
+    var regionSelectItems = page.RegionDropdownValues.Select(x => new SelectListItem {
+        Text = x
+    }).ToList();
 }
 
 @functions {
@@ -40,11 +43,22 @@
         @Html.TextBoxFor(x => x.Title, InputAttrs(x => x.Title))
         @HelpTextFor(x => x.Title, page.TitleFieldHelpText)
     </div>
+
+    <div class="mb-4">
+        <label for="@Html.IdFor(x => x.Reason)" class="form-label">@page.ReasonFieldCaption</label>
+        @Html.TextAreaFor(x => x.Reason, InputAttrs(x => x.Reason))
+        @HelpTextFor(x => x.Reason, page.ReasonFieldHelpText)
+    </div>
     
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Description)" class="form-label">@page.DescriptionFieldCaption</label>
         @Html.TextAreaFor(x => x.Description, InputAttrs(x => x.Description))
         @HelpTextFor(x => x.Description, page.DescriptionFieldHelpText)
+    </div>
+    
+    <div class="mb-4">
+        <label for="@Html.IdFor(x => x.Region)" class="form-label">@page.RegionFieldCaption</label>
+        @Html.DropDownListFor(x => x.Region, regionSelectItems, new { @class = "form-select" })
     </div>
     
     <div class="mb-4">
