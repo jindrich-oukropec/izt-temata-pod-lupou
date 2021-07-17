@@ -70,6 +70,10 @@
                 font-weight: bold;
             }
             
+            #form span.required-field {
+                color: #DE000A;
+            }
+            
             #form, #confirmation {
                 background-color: #F1F1F2;
             }
@@ -212,12 +216,19 @@
             });
             
             $('#specific-location-toggle').on('change', '.form-check-input:radio', function () {
-                if (this.value == "1") {
+                if (this.value === "1") {
                     $('#specific-location-field').slideDown();
                 } else {
                     $('#specific-location-field').slideUp();
                 }
             })
+            
+            @if (!ViewData.ModelState.IsValid)
+            {
+                <text>
+                    $('#form').show();
+                </text>
+            }
             
             @if(TempData["Sent"] != null)
             {

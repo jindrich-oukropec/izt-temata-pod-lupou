@@ -28,15 +28,19 @@ namespace TemataPodLupou.Web.Controllers
         public class ViewModel
         {
             [Required]
+            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.TitleFieldCaption))]
             public string Title { get; set; }
 
-            [Required]
+            [Required]            
+            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.ReasonFieldCaption))]
             public string Reason { get; set; }
 
             [Required]
+            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.DescriptionFieldCaption))]
             public string Description { get; set; }
             
             [Required]
+            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.RegionFieldCaption))]
             public string Region { get; set; }
             
             public string Location { get; set; }
@@ -44,6 +48,7 @@ namespace TemataPodLupou.Web.Controllers
             public HttpPostedFileBase File { get; set; }
             
             [Required]
+            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.EmailFieldCaption))]
             public string Email { get; set; }
         }
         
@@ -60,7 +65,6 @@ namespace TemataPodLupou.Web.Controllers
         {
             if (!ModelState.IsValid)
             {
-                //TempData.Add("CustomMessage", "Failure");
                 return CurrentUmbracoPage();
             }
 

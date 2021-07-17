@@ -41,6 +41,7 @@
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Title)" class="form-label">
             @page.TitleFieldCaption
+            <span class="required-field">*</span>
         </label>
         @Html.TextBoxFor(x => x.Title, InputAttrs(x => x.Title))
         @HelpTextFor(x => x.Title, page.TitleFieldHelpText)
@@ -49,6 +50,7 @@
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Reason)" class="form-label">
             @page.ReasonFieldCaption
+            <span class="required-field">*</span>
         </label>
         @Html.TextAreaFor(x => x.Reason, InputAttrs(x => x.Reason))
         @HelpTextFor(x => x.Reason, page.ReasonFieldHelpText)
@@ -57,6 +59,7 @@
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Description)" class="form-label">
             @page.DescriptionFieldCaption
+            <span class="required-field">*</span>
         </label>
         @Html.TextAreaFor(x => x.Description, InputAttrs(x => x.Description))
         @HelpTextFor(x => x.Description, page.DescriptionFieldHelpText)
@@ -65,6 +68,7 @@
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Region)" class="form-label">
             @page.RegionFieldCaption
+            <span class="required-field">*</span>
         </label>
         @Html.DropDownListFor(x => x.Region, regionSelectItems, new { @class = "form-select" })
     </div>
@@ -109,6 +113,7 @@
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Email)" class="form-label">
             @page.EmailFieldCaption
+            <span class="required-field">*</span>
         </label>
         @Html.TextBoxFor(x => x.Email, InputAttrs(x => x.Email))
         @HelpTextFor(x => x.Email, page.EmailFieldHelpText)
