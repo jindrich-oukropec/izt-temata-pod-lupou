@@ -74,7 +74,7 @@
                 background-color: #F1F1F2;
             }
             
-            #form label {
+            #form .form-label {
                 font-size: 16px;
                 font-weight: bold;
             }
@@ -210,6 +210,14 @@
             $('#back-to-site').click(function () {
                 $('#confirmation').slideUp();
             });
+            
+            $('#specific-location-toggle').on('change', '.form-check-input:radio', function () {
+                if (this.value == "1") {
+                    $('#specific-location-field').slideDown();
+                } else {
+                    $('#specific-location-field').slideUp();
+                }
+            })
             
             @if(TempData["Sent"] != null)
             {

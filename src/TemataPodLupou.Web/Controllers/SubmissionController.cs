@@ -43,6 +43,7 @@ namespace TemataPodLupou.Web.Controllers
             
             public HttpPostedFileBase File { get; set; }
             
+            [Required]
             public string Email { get; set; }
         }
         
