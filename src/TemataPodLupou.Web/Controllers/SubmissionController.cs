@@ -1,7 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Helpers;
@@ -11,7 +10,6 @@ using TemataPodLupou.Web.Models;
 using Umbraco.Core;
 using Umbraco.Core.Models;
 using Umbraco.Core.Services;
-using Umbraco.Web;
 using Umbraco.Web.Mvc;
 
 namespace TemataPodLupou.Web.Controllers
@@ -64,6 +62,7 @@ namespace TemataPodLupou.Web.Controllers
         [HttpPost]
         [ValidateAntiForgeryToken]
         [ValidateUmbracoFormRouteString]
+        [ValidateRecaptcha]
         public ActionResult HandleSubmission(ViewModel model)
         {
             if (!ModelState.IsValid)

@@ -350,6 +350,7 @@
   <ItemGroup>
     <Compile Include="ContentFinders\SubmissionWidgetHostScriptFinder.cs" />
     <Compile Include="Controllers\ContentPropertyDisplayNameAttribute.cs" />
+    <Compile Include="Controllers\RecaptchaValidationService.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Models\Article.generated.cs" />
     <Compile Include="Models\Audio.generated.cs" />

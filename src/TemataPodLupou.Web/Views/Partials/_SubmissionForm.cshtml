@@ -33,6 +33,14 @@
     }
 }
 
+
+<script>
+    function captchaCallback(token) {
+     document.getElementsByTagName('form')[0].submit();
+    }
+</script>
+
+
 @using (Html.BeginUmbracoForm<SubmissionController>(nameof(SubmissionController.HandleSubmission)))
 {
     @Html.ValidationSummary()
@@ -121,7 +129,9 @@
         @HelpTextFor(x => x.Email, page.EmailFieldHelpText)
     </div>
     
-    <button type="submit" class="btn btn-main mb-2">
+    <button type="submit" class="btn btn-main mb-2 g-recaptcha"
+            data-sitekey="6Lev-KMbAAAAAA0CQipRc0AEY6WpXbe0vB_IrwO6"
+            data-callback='captchaCallback'>
         @page.SubmitButtonText
     </button>
 
