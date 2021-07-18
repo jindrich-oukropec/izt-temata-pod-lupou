@@ -1,9 +1,12 @@
 ﻿using System;
+using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
+using System.Linq;
 using System.Linq.Expressions;
 using System.Web;
 using System.Web.Helpers;
 using System.Web.Mvc;
+using Newtonsoft.Json;
 using TemataPodLupou.Web.Models;
 using Umbraco.Core;
 using Umbraco.Core.Models;
@@ -45,7 +48,7 @@ namespace TemataPodLupou.Web.Controllers
             
             public string Location { get; set; }
             
-            public HttpPostedFileBase File { get; set; }
+            public HttpPostedFileBase[] Files { get; set; }
             
             [Required]
             [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.EmailFieldCaption))]
@@ -76,14 +79,29 @@ namespace TemataPodLupou.Web.Controllers
             SetValue(content, x => x.Location, model.Location);
             SetValue(content, x => x.Email, model.Email);
             
-            if (model.File != null)
+            if (model.Files != null)
             {
                 var parentMedia = (CurrentPage as SubmissionWidget).MediaStoreFolder.MediaItem;
-                var media = _mediaService.CreateMediaWithIdentity(model.Title, parentMedia.Id, "File");
-                media.SetValue(_contentTypeBaseServiceProvider, "umbracoFile", model.File.FileName, model.File.InputStream);
-                _mediaService.Save(media);
-                var publishedMedia = Umbraco.Media(media.Id);
-                SetValue(content, x => x.Media, publishedMedia.Url());
+
+                var pickerValue = new List<Dictionary<string, string>>(model.Files.Length);
+                foreach (var file in model.Files)
+                {
+                    if (file == null)
+                        continue;
+                    
+                    var media = _mediaService.CreateMedia(model.Title, parentMedia.Id, "File");
+                    media.SetValue(_contentTypeBaseServiceProvider, Constants.Conventions.Media.File, file.FileName, file.InputStream);
+                    _mediaService.Save(media);
+
+                    pickerValue.Add(new Dictionary<string, string> {
+                        {"key", Guid.NewGuid().ToString()},
+                        {"mediaKey", media.Key.ToString()},
+                        {"crops", null},
+                        {"focalPoint", null}
+                    });
+                }                    
+                var json = JsonConvert.SerializeObject(pickerValue);
+                SetValue(content, x => x.Media, json);
             }
             
             Services.ContentService.SaveAndPublish(content);

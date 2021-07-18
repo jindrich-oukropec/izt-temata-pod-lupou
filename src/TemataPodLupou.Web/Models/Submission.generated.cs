@@ -70,7 +70,7 @@ namespace TemataPodLupou.Web.Models
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("media")]
-		public virtual string Media => this.Value<string>("media");
+		public virtual global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.MediaWithCrops> Media => this.Value<global::System.Collections.Generic.IEnumerable<global::Umbraco.Core.Models.MediaWithCrops>>("media");
 
 		///<summary>
 		/// Reason

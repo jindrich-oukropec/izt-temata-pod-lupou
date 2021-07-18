@@ -103,11 +103,13 @@
     </div>
     
     <div class="mb-4">
-        <label for="@Html.IdFor(x => x.File)" class="form-label">
+        <label for="@Html.IdFor(x => x.Files)" class="form-label">
             @page.FileFieldCaption
         </label>
-        <input type="file" class="form-control form-control-lg" name="@Html.NameFor(x => x.File)" aria-describedby="@HelperId(x => x.File)">
-        @HelpTextFor(x => x.File, page.FileFieldHelpText)
+        <input type="file" class="form-control form-control-lg"
+               name="@Html.NameFor(x => x.Files)" aria-describedby="@HelperId(x => x.Files)"
+               multiple>
+        @HelpTextFor(x => x.Files, page.FileFieldHelpText)
     </div>
     
     <div class="mb-4">
