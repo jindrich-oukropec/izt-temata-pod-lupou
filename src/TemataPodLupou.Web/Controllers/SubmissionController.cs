@@ -60,7 +60,6 @@ namespace TemataPodLupou.Web.Controllers
         }
 
         [HttpPost]
-        [ValidateAntiForgeryToken]
         [ValidateUmbracoFormRouteString]
         [ValidateRecaptcha]
         public ActionResult HandleSubmission(ViewModel model)

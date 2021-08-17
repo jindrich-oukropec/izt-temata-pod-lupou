@@ -44,7 +44,6 @@
 @using (Html.BeginUmbracoForm<SubmissionController>(nameof(SubmissionController.HandleSubmission)))
 {
     @Html.ValidationSummary()
-    @Html.AntiForgeryToken()
     
     <div class="mb-4">
         <label for="@Html.IdFor(x => x.Title)" class="form-label">
