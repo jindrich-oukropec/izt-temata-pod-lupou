@@ -52,11 +52,32 @@ namespace TemataPodLupou.Web.Models
 		public virtual string BackToSiteButtonLabel => this.Value<string>("backToSiteButtonLabel");
 
 		///<summary>
+		/// Call to Action Backgroud Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("callToActionBackgroudColour")]
+		public virtual string CallToActionBackgroudColour => this.Value<string>("callToActionBackgroudColour");
+
+		///<summary>
+		/// Checked Input Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("checkedInputColour")]
+		public virtual string CheckedInputColour => this.Value<string>("checkedInputColour");
+
+		///<summary>
 		/// Collection Process
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("collectionProcess")]
 		public virtual global::System.Collections.Generic.IEnumerable<global::TemataPodLupou.Web.Models.ProcessStep> CollectionProcess => this.Value<global::System.Collections.Generic.IEnumerable<global::TemataPodLupou.Web.Models.ProcessStep>>("collectionProcess");
+
+		///<summary>
+		/// Collection Process Circle Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("collectionProcessCircleColour")]
+		public virtual string CollectionProcessCircleColour => this.Value<string>("collectionProcessCircleColour");
 
 		///<summary>
 		/// Button Text
@@ -85,6 +106,13 @@ namespace TemataPodLupou.Web.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("descriptionFieldHelpText")]
 		public virtual string DescriptionFieldHelpText => this.Value<string>("descriptionFieldHelpText");
+
+		///<summary>
+		/// Display Call to Action: If unchecked will render the form immediately.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("displayCallToAction")]
+		public virtual bool DisplayCallToAction => this.Value<bool>("displayCallToAction");
 
 		///<summary>
 		/// Email Field Caption
@@ -164,6 +192,27 @@ namespace TemataPodLupou.Web.Models
 		public virtual string RegionFieldCaption => this.Value<string>("regionFieldCaption");
 
 		///<summary>
+		/// Selected Input Border Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("selectedInputBorderColour")]
+		public virtual string SelectedInputBorderColour => this.Value<string>("selectedInputBorderColour");
+
+		///<summary>
+		/// Selected Input Glow Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("selectedInputGlowColour")]
+		public virtual string SelectedInputGlowColour => this.Value<string>("selectedInputGlowColour");
+
+		///<summary>
+		/// Show Collection Process
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("showCollectionProcess")]
+		public virtual bool ShowCollectionProcess => this.Value<bool>("showCollectionProcess");
+
+		///<summary>
 		/// Specific Location Field Caption
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
@@ -192,11 +241,46 @@ namespace TemataPodLupou.Web.Models
 		public virtual string SpecificLocationSelectorWholeRegionLabel => this.Value<string>("specificLocationSelectorWholeRegionLabel");
 
 		///<summary>
+		/// Submit Button Border Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("submitButtonBorderColour")]
+		public virtual string SubmitButtonBorderColour => this.Value<string>("submitButtonBorderColour");
+
+		///<summary>
+		/// Submit Button Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("submitButtonColour")]
+		public virtual string SubmitButtonColour => this.Value<string>("submitButtonColour");
+
+		///<summary>
+		/// Submit Button Hover Border Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("submitButtonHoverBorderColour")]
+		public virtual string SubmitButtonHoverBorderColour => this.Value<string>("submitButtonHoverBorderColour");
+
+		///<summary>
+		/// Submit Button Hover Colour
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("submitButtonHoverColour")]
+		public virtual string SubmitButtonHoverColour => this.Value<string>("submitButtonHoverColour");
+
+		///<summary>
 		/// Submit Button Text
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("submitButtonText")]
 		public virtual string SubmitButtonText => this.Value<string>("submitButtonText");
+
+		///<summary>
+		/// Target Element ID: The ID of the element where the widget will be prepended to.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("targetElementID")]
+		public virtual string TargetElementID => this.Value<string>("targetElementID");
 
 		///<summary>
 		/// Terms and Conditions

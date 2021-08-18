@@ -14,5 +14,5 @@ void function () {
 
 @Html.Raw(embed)
 
-	embed('comments', '@Model.Url(null, UrlMode.Absolute)');
+	embed('@Model.TargetElementID', '@Model.Url(null, UrlMode.Absolute)');
 }()

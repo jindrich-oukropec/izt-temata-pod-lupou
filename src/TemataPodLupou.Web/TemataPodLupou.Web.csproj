@@ -362,6 +362,7 @@
     <Compile Include="Models\Member.generated.cs" />
     <Compile Include="Models\ProcessStep.generated.cs" />
     <Compile Include="Models\Submission.generated.cs" />
+    <Compile Include="Models\SubmissionWidget.cs" />
     <Compile Include="Models\SubmissionWidget.generated.cs" />
     <Compile Include="Models\VectorGraphics.generated.cs" />
     <Compile Include="Models\Video.generated.cs" />
@@ -391,9 +392,9 @@
     <Content Include="Views\Partials\Grid\Bootstrap3.cshtml" />
     <Content Include="Views\Partials\Grid\Bootstrap3-Fluid.cshtml" />
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
-    <None Include="Properties\PublishProfiles\Azure.pubxml" />
-    <None Include="Properties\PublishProfiles\temata-pod-lupou - FTP.pubxml" />
-    <None Include="Web.Azure.config">
+    <None Include="Properties\PublishProfiles\AWS.pubxml" />
+    <None Include="Properties\PublishProfiles\Web Deploy Package - Folder.pubxml" />
+    <None Include="Web.AWS.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
     <None Include="Web.Debug.config">

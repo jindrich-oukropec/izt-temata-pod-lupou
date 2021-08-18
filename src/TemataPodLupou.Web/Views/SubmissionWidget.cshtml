@@ -26,8 +26,28 @@
                 font-family: 'Roboto', sans-serif;
             }
 
+            #cta {
+                background-color: @Model.CallToActionBackgroudColour;
+                color: white;
+            }
+
+            #cta h1 {
+                font-size: 27px;
+                font-weight: bold;
+            }
+
+            #cta .btn {
+                font-size: 18px;
+                font-weight: bold;
+            }
+
             .btn {
                 border-radius: 0;
+            }
+
+            .btn-light,
+            .btn-main {
+                height: 50px;
             }
 
             .btn-light {
@@ -37,19 +57,14 @@
 
             .btn-main {
                 width: 100%;
-                background-color: #DE000A;
-                border-color: #d1050e;
+                background-color: @Model.SubmitButtonColour;
+                border-color: @Model.SubmitButtonBorderColourOrDefault;
                 color: white;
             }
 
-            .btn-light,
-            .btn-main {
-                height: 50px;
-            }
-            
             .btn-main:hover {
-                background-color: #c4030c;
-                border-color: #a8070e;
+                background-color: @Model.SubmitButtonHoverColourOrDefault;
+                border-color: @Model.SubmitButtonHoverBorderColourOrDefault;
                 color: white;
             }
 
@@ -64,8 +79,8 @@
             .form-control:focus,
             .form-select:focus,
             .form-check-input:focus {
-                box-shadow: 0 0 0 .25rem rgba(241,136,140,0.5);
-                border-color: #d1050e;
+                box-shadow: 0 0 0 .25rem @Model.SelectedInputGlowColour;
+                border-color: @Model.SelectedInputBorderColour;
             }
 
             .form-check-input:checked {
@@ -82,67 +97,52 @@
             }
 
             input[type='radio'].form-check-input:checked:before {
-                background: #c4030c;
+                background: @Model.CheckedInputColour;
             }
 
             .form-check-input:hover {
                 cursor: pointer
             }
-            
+
             .w-medium {
                 max-width: 600px;
             }
-            
+
             .w-small {
                 max-width: 400px;
             }
-        
-            #cta {
-                background-color: #DE000A;
-                color: white;
-            }
-            
-            #cta h1 {
-                font-size: 27px;
-                font-weight: bold;
-            }
-            
-            #cta .btn {
-                font-size: 18px;
-                font-weight: bold;
-            }
-            
+
             #form {
                 padding-bottom: 90px !important;
             }
-            
+
             #form span.required-field {
                 color: #DE000A;
             }
-            
+
             #form, #confirmation {
                 background-color: #F1F1F2;
             }
-            
+
             #form .form-label {
                 font-size: 16px;
                 font-weight: bold;
             }
-            
+
             #form .form-text {
                 font-size: 12px;
             }
-            
+
             #form hr {
                 border-color: #212529;
                 opacity: 1;
             }
-            
+
             #form .circle {
                 width: 40px;
                 height: 40px;
                 margin: 0 auto;
-                background-color: #DE000A;
+                background-color: @Model.CollectionProcessCircleColourOrDefault;
                 color: white;
                 border-radius: 20px;
                 text-align: center;
@@ -150,7 +150,7 @@
                 font-size: 1.1rem;
                 font-weight: bold;
             }
-            
+
             #form .date {
                 font-size: 12px;
             }
@@ -212,7 +212,7 @@
             </div>
         </div>
 
-        @if (Model.CollectionProcess?.Any() == true)
+        @if (Model.ShowCollectionProcess && Model.CollectionProcess?.Any() == true)
         {
             var i = 1;
             <hr />
@@ -269,19 +269,18 @@
                 } else {
                     $('#specific-location-field').slideUp();
                 }
-            })
-            
-            @if (!ViewData.ModelState.IsValid)
-            {
-                <text>
-                    $('#form').show();
-                </text>
-            }
-            
+            });
+
             @if(TempData["Sent"] != null)
             {
                 <text>
                     $('#confirmation').show();
+                </text>
+            } 
+            else if (!ViewData.ModelState.IsValid || !Model.DisplayCallToAction)
+            {
+                <text>
+                    $('#form').show();
                 </text>
             }
         })
