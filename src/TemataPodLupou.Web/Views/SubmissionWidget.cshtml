@@ -263,7 +263,18 @@
             });
 
             $('#back-to-site').click(function () {
-                $('#confirmation').slideUp();
+                @if (Model.BackToSiteButtonUrl == null)
+                {
+                    <text>
+                        $('#confirmation').slideUp();
+                    </text>
+                }
+                else
+                {
+                    <text>
+                        window.parent.postMessage({ redirect: '@Model.BackToSiteButtonUrl.Target' }, '*');
+                    </text>
+                }
             });
 
             $('#specific-location-toggle').on('change', '.form-check-input:radio', function () {
@@ -274,7 +285,7 @@
                 }
             });
 
-            @if(TempData["Sent"] != null)
+            @if (TempData["Sent"] != null)
             {
                 <text>
                     $('#confirmation').show();

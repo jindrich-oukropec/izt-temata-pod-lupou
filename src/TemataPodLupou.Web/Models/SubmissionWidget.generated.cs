@@ -52,6 +52,13 @@ namespace TemataPodLupou.Web.Models
 		public virtual string BackToSiteButtonLabel => this.Value<string>("backToSiteButtonLabel");
 
 		///<summary>
+		/// Back To Site Button URL: Useful for when the form is rendered on a standalone page. Leaving this empty will make the form collapse when the button is clicked.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("backToSiteButtonURL")]
+		public virtual global::Umbraco.Web.Models.Link BackToSiteButtonUrl => this.Value<global::Umbraco.Web.Models.Link>("backToSiteButtonURL");
+
+		///<summary>
 		/// Call to Action Backgroud Colour
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
