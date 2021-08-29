@@ -348,6 +348,8 @@
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="ContentFinders\AlternativeTemplateContentFinder.cs" />
+    <Compile Include="ContentFinders\SubmissionsCsvDownloadFinder.cs" />
     <Compile Include="ContentFinders\SubmissionWidgetHostScriptFinder.cs" />
     <Compile Include="Controllers\ContentPropertyDisplayNameAttribute.cs" />
     <Compile Include="Controllers\RecaptchaValidationService.cs" />
@@ -394,6 +396,7 @@
     <Content Include="Views\Partials\BlockList\Default.cshtml" />
     <None Include="Properties\PublishProfiles\AWS.pubxml" />
     <None Include="Properties\PublishProfiles\Web Deploy Package - Folder.pubxml" />
+    <Content Include="Views\SubmissionWidgetDataExport.cshtml" />
     <None Include="Web.AWS.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>
