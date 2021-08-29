@@ -344,18 +344,19 @@
     <Content Include="Views\Home.cshtml" />
     <Content Include="Views\Partials\_SubmissionForm.cshtml" />
     <Content Include="Views\SubmissionWidget.cshtml" />
-    <Content Include="Views\SubmissionWidgetScriptEmbed.cshtml" />
+    <Content Include="Views\ScriptEmbed.cshtml" />
     <Content Include="Web.config" />
   </ItemGroup>
   <ItemGroup>
     <Compile Include="ContentFinders\AlternativeTemplateContentFinder.cs" />
     <Compile Include="ContentFinders\SubmissionsCsvDownloadFinder.cs" />
-    <Compile Include="ContentFinders\SubmissionWidgetHostScriptFinder.cs" />
+    <Compile Include="ContentFinders\EmbeddableScriptContentFinder.cs" />
     <Compile Include="Controllers\ContentPropertyDisplayNameAttribute.cs" />
     <Compile Include="Controllers\RecaptchaValidationService.cs" />
     <Compile Include="Controllers\SubmissionController.cs" />
     <Compile Include="Models\Article.generated.cs" />
     <Compile Include="Models\Audio.generated.cs" />
+    <Compile Include="Models\EmbeddableWidget.generated.cs" />
     <Compile Include="Models\File.generated.cs" />
     <Compile Include="Models\Folder.generated.cs" />
     <Compile Include="Models\Home.generated.cs" />
@@ -363,6 +364,7 @@
     <Compile Include="Models\Media.generated.cs" />
     <Compile Include="Models\Member.generated.cs" />
     <Compile Include="Models\ProcessStep.generated.cs" />
+    <Compile Include="Models\RedirectWidget.generated.cs" />
     <Compile Include="Models\Submission.generated.cs" />
     <Compile Include="Models\SubmissionWidget.cs" />
     <Compile Include="Models\SubmissionWidget.generated.cs" />
@@ -397,6 +399,7 @@
     <None Include="Properties\PublishProfiles\AWS.pubxml" />
     <None Include="Properties\PublishProfiles\Web Deploy Package - Folder.pubxml" />
     <Content Include="Views\SubmissionWidgetDataExport.cshtml" />
+    <Content Include="Views\RedirectWidget.cshtml" />
     <None Include="Web.AWS.config">
       <DependentUpon>Web.config</DependentUpon>
     </None>

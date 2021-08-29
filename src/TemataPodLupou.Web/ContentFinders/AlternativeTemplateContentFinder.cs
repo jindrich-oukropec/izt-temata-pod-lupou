@@ -2,6 +2,7 @@
 using Umbraco.Core;
 using Umbraco.Core.Logging;
 using Umbraco.Core.Models;
+using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.Services;
 using Umbraco.Web.Routing;
 
@@ -10,7 +11,6 @@ namespace TemataPodLupou.Web.ContentFinders
     public abstract class AlternativeTemplateContentFinder : ContentFinderByUrl
     {
         protected abstract string TemplateAlias { get; }
-        protected abstract string DocTypeAlias { get; }
         protected abstract string UrlSlug { get; }
 
         private readonly ITemplate _template;
@@ -51,16 +51,18 @@ namespace TemataPodLupou.Web.ContentFinders
             if (node == null)
                 return false;
 
-            if (node.ContentType.Alias != DocTypeAlias)
+            if (!IsTemplateValidForNode(node))
             {
                 Logger.Debug<AlternativeTemplateContentFinder>(
-                    "Node at {Route} is not a {ExpectedDocType} but it is {ActualDocType}",
-                    parentRoute, DocTypeAlias, node.ContentType.Alias);
+                    "Node ID {NodeId} at {Route} deemed invalid for alternative template, despite URL match",
+                    node.Id, parentRoute);
                 return false;
             }
 
             request.SetTemplate(_template);
             return true;
         }
+
+        protected abstract bool IsTemplateValidForNode(IPublishedContent node);
     }
 }

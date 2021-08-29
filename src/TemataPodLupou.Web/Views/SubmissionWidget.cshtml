@@ -236,24 +236,27 @@
             }
         </section>
 
-        <section id="confirmation" class="container-fluid px-4 px-md-5 py-5" style="display: none">
-            <div class="row justify-content-center mb-3">
-                <div class="col w-small text-center">
-                    <p>@Model.ThankYouText</p>
+        @if (TempData.ContainsKey("Sent"))
+        {
+            <section id="confirmation" class="container-fluid px-4 px-md-5 py-5">
+                <div class="row justify-content-center mb-3">
+                    <div class="col w-small text-center">
+                        <p>@Model.ThankYouText</p>
 
-                    @if (Model.ThankYouImage != null)
-                    {
-                        <div class="my-5">
-                            <img src="@Model.ThankYouImage.MediaItem.Url()" alt="@Model.ThankYouImage.MediaItem.Name" />
+                        @if (Model.ThankYouImage != null)
+                        {
+                            <div class="my-5">
+                                <img src="@Model.ThankYouImage.MediaItem.Url()" alt="@Model.ThankYouImage.MediaItem.Name" />
+                            </div>
+                        }
+
+                        <div>
+                            <button id="back-to-site" class="btn btn-main">@Model.BackToSiteButtonLabel</button>
                         </div>
-                    }
-
-                    <div>
-                        <button id="back-to-site" class="btn btn-main">@Model.BackToSiteButtonLabel</button>
                     </div>
                 </div>
-            </div>
-        </section>
+            </section>
+        }
 
         <script>
         $(function () {
@@ -285,13 +288,7 @@
                 }
             });
 
-            @if (TempData["Sent"] != null)
-            {
-                <text>
-                    $('#confirmation').show();
-                </text>
-            }
-            else if (!ViewData.ModelState.IsValid || !Model.DisplayCallToAction)
+            @if (!ViewData.ModelState.IsValid || (!TempData.ContainsKey("Sent") && !Model.DisplayCallToAction))
             {
                 <text>
                     $('#form').show();

@@ -21,7 +21,7 @@ namespace TemataPodLupou.Web.Models
 {
 	/// <summary>Submission Widget</summary>
 	[PublishedModel("submissionWidget")]
-	public partial class SubmissionWidget : PublishedContentModel
+	public partial class SubmissionWidget : PublishedContentModel, IEmbeddableWidget
 	{
 		// helpers
 #pragma warning disable 0109 // new is redundant
@@ -283,13 +283,6 @@ namespace TemataPodLupou.Web.Models
 		public virtual string SubmitButtonText => this.Value<string>("submitButtonText");
 
 		///<summary>
-		/// Target Element ID: The ID of the element where the widget will be prepended to.
-		///</summary>
-		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
-		[ImplementPropertyType("targetElementID")]
-		public virtual string TargetElementID => this.Value<string>("targetElementID");
-
-		///<summary>
 		/// Terms and Conditions
 		///</summary>
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
@@ -323,5 +316,12 @@ namespace TemataPodLupou.Web.Models
 		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
 		[ImplementPropertyType("titleFieldHelpText")]
 		public virtual string TitleFieldHelpText => this.Value<string>("titleFieldHelpText");
+
+		///<summary>
+		/// Target Element ID: The ID of the element where the widget will be prepended to.
+		///</summary>
+		[global::System.CodeDom.Compiler.GeneratedCodeAttribute("Umbraco.ModelsBuilder.Embedded", "8.14.0")]
+		[ImplementPropertyType("targetElementID")]
+		public virtual string TargetElementID => global::TemataPodLupou.Web.Models.EmbeddableWidget.GetTargetElementID(this);
 	}
 }

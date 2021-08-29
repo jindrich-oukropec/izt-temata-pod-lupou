@@ -9,26 +9,26 @@ using Umbraco.Web.Routing;
 
 namespace TemataPodLupou.Web.ContentFinders
 {
-    public class SubmissionsCsvDownloadFinder : AlternativeTemplateContentFinder
+    public class EmbeddableScriptContentFinder : AlternativeTemplateContentFinder
     {
-        protected override string TemplateAlias => "SubmissionWidgetDataExport";
-        protected override string UrlSlug => "export";
+        protected override string TemplateAlias => "ScriptEmbed";
+        protected override string UrlSlug => "embed";
 
         [RuntimeLevel(MinLevel = RuntimeLevel.Run)]
         public class Composer : IUserComposer
         {
             public void Compose(Composition composition)
             {
-                composition.ContentFinders().InsertBefore<ContentFinderByUrl, SubmissionsCsvDownloadFinder>();
+                composition.ContentFinders().InsertBefore<ContentFinderByUrl, EmbeddableScriptContentFinder>();
             }
         }
 
-        public SubmissionsCsvDownloadFinder(ILogger logger, IFileService fileService)
+        public EmbeddableScriptContentFinder(ILogger logger, IFileService fileService)
             : base(logger, fileService) { }
 
         protected override bool IsTemplateValidForNode(IPublishedContent node)
         {
-            return node.ContentType.Alias == SubmissionWidget.ModelTypeAlias;
+            return node.ContentType.CompositionAliases.Contains(EmbeddableWidget.ModelTypeAlias);
         }
     }
 }
