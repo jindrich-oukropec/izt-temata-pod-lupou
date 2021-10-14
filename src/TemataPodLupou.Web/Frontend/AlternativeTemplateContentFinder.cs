@@ -6,7 +6,7 @@ using Umbraco.Core.Models.PublishedContent;
 using Umbraco.Core.Services;
 using Umbraco.Web.Routing;
 
-namespace TemataPodLupou.Web.ContentFinders
+namespace TemataPodLupou.Web.Frontend
 {
     public abstract class AlternativeTemplateContentFinder : ContentFinderByUrl
     {

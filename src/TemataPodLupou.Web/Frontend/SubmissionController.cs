@@ -12,7 +12,7 @@ using Umbraco.Core.Models;
 using Umbraco.Core.Services;
 using Umbraco.Web.Mvc;
 
-namespace TemataPodLupou.Web.Controllers
+namespace TemataPodLupou.Web.Frontend
 {
     public class SubmissionController : SurfaceController
     {
@@ -29,30 +29,30 @@ namespace TemataPodLupou.Web.Controllers
         public class ViewModel
         {
             [Required]
-            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.TitleFieldCaption))]
+            [ContentPropertyDisplayName(nameof(SubmissionWidget.TitleFieldCaption))]
             public string Title { get; set; }
 
-            [Required]            
-            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.ReasonFieldCaption))]
+            [Required]
+            [ContentPropertyDisplayName(nameof(SubmissionWidget.ReasonFieldCaption))]
             public string Reason { get; set; }
 
             [Required]
-            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.DescriptionFieldCaption))]
+            [ContentPropertyDisplayName(nameof(SubmissionWidget.DescriptionFieldCaption))]
             public string Description { get; set; }
-            
+
             [Required]
-            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.RegionFieldCaption))]
+            [ContentPropertyDisplayName(nameof(SubmissionWidget.RegionFieldCaption))]
             public string Region { get; set; }
-            
+
             public string Location { get; set; }
-            
+
             public HttpPostedFileBase[] Files { get; set; }
-            
+
             [Required]
-            [ContentPropertyDisplayNameAttribute(nameof(SubmissionWidget.EmailFieldCaption))]
+            [ContentPropertyDisplayName(nameof(SubmissionWidget.EmailFieldCaption))]
             public string Email { get; set; }
         }
-        
+
         public ActionResult RenderForm()
         {
             var viewModel = new ViewModel();
@@ -76,7 +76,7 @@ namespace TemataPodLupou.Web.Controllers
             SetValue(content, x => x.Region, model.Region);
             SetValue(content, x => x.Location, model.Location);
             SetValue(content, x => x.Email, model.Email);
-            
+
             if (model.Files != null)
             {
                 var parentMedia = (CurrentPage as SubmissionWidget).MediaStoreFolder.MediaItem;
@@ -86,7 +86,7 @@ namespace TemataPodLupou.Web.Controllers
                 {
                     if (file == null)
                         continue;
-                    
+
                     var media = _mediaService.CreateMedia(model.Title, parentMedia.Id, "File");
                     media.SetValue(_contentTypeBaseServiceProvider, Constants.Conventions.Media.File, file.FileName, file.InputStream);
                     _mediaService.Save(media);
@@ -97,17 +97,17 @@ namespace TemataPodLupou.Web.Controllers
                         {"crops", null},
                         {"focalPoint", null}
                     });
-                }                    
+                }
                 var json = JsonConvert.SerializeObject(pickerValue);
                 SetValue(content, x => x.Media, json);
             }
-            
+
             Services.ContentService.SaveAndPublish(content);
-            
+
             TempData.Add("Sent", true);
             return RedirectToCurrentUmbracoPage();
         }
-        
+
         private static void SetValue<TValue>(IContentBase content, Expression<Func<Submission, TValue>> selector, object value)
         {
             var propertyAlias = Submission.GetModelPropertyType(selector).Alias;

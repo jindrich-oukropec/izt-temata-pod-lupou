@@ -1,0 +1,21 @@
+﻿<div class="umb-dialog umb-pane" ng-controller="Temata.DownloadSubmissionsController as vm">
+    <div class="umb-dialog-body">
+        <p>
+            Click the button below to export the submission to a CSV
+        </p>
+
+        <umb-button href="{{ vm.downloadLink }}"
+                    type="link"
+                    button-style="primary"
+                    label="Download"
+                    autoFocus="true">
+        </umb-button>
+
+
+        <umb-button action="vm.close()"
+                    type="button"
+                    button-style="light"
+                    label="Cancel">
+        </umb-button>
+    </div>
+</div>

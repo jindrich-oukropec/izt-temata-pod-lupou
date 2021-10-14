@@ -7,7 +7,7 @@ using Umbraco.Core.Services;
 using Umbraco.Web;
 using Umbraco.Web.Routing;
 
-namespace TemataPodLupou.Web.ContentFinders
+namespace TemataPodLupou.Web.Frontend
 {
     public class EmbeddableScriptContentFinder : AlternativeTemplateContentFinder
     {

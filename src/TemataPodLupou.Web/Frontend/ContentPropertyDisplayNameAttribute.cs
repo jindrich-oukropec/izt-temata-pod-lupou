@@ -3,7 +3,7 @@ using Umbraco.Core;
 using Umbraco.Core.Composing;
 using Umbraco.Web;
 
-namespace TemataPodLupou.Web.Controllers
+namespace TemataPodLupou.Web.Frontend
 {
     public class ContentPropertyDisplayNameAttribute : DisplayNameAttribute
     {

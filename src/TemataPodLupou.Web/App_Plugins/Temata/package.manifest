@@ -1,0 +1,5 @@
+﻿{
+    "javascript": [
+        "~/App_Plugins/Temata/dialogs/content/download-submissions.controller.js"
+    ]
+}

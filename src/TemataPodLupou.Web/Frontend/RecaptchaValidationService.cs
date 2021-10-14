@@ -5,7 +5,7 @@ using Newtonsoft.Json.Linq;
 using Umbraco.Core;
 using Umbraco.Core.Composing;
 
-namespace TemataPodLupou.Web.Controllers
+namespace TemataPodLupou.Web.Frontend
 {
     public class ValidateRecaptchaAttribute : ActionFilterAttribute
     {
@@ -22,17 +22,17 @@ namespace TemataPodLupou.Web.Controllers
                     .AddModelError("Recaptcha", "Captcha validation failed.");
         }
     }
-    
+
     public class RecaptchaValidationService
     {
-        public class Composer :  IUserComposer
+        public class Composer : IUserComposer
         {
             public void Compose(Composition composition)
             {
                 composition.Register<RecaptchaValidationService>();
             }
         }
-        
+
         private const string ApiUrl = "https://www.google.com/recaptcha/api/siteverify";
         private readonly string _secretKey;
 
@@ -54,7 +54,7 @@ namespace TemataPodLupou.Web.Controllers
 
         private static bool ParseValidationResult(string validationResult)
         {
-            return (bool) JObject.Parse(validationResult).SelectToken("success");
+            return (bool)JObject.Parse(validationResult).SelectToken("success");
         }
     }
 }
