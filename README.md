@@ -10,7 +10,7 @@ Tato sekce obsahuje návod pro správnou konfiguraci systému, vytvoření a pro
 
 ## Onboarding nové redakce
 
-Jedna instalace platformy Témata pod lupou může obsluhovat i více redakcí. Pro každou redakci je nutné vytvořit prvotní obsah a dát členům redakce přístup k jejich části dat.
+Jednu instalaci platformy Témata pod lupou může obsluhovat i více redakcí. Pro každou redakci je nutné vytvořit prvotní obsah a dát členům redakce přístup k jejich části dat.
 
 1. V sekci `Content` vytvořte dokument typu `Media` (= redakce)
     - Pro velké redakce můžete volitelně z dokumentů typu `Media` vytvořit hierarchii a lépe tak členit obsah a přístupová práva
